@@ -4,14 +4,13 @@ pipeline  {
 	//agent any	// agent any means run this pipeline on any available agent
 	agent{
 		docker{
-			image 'maven:3-alpine'	// run this pipeline on docker image
-			args '-v /root/.m2:/root/.m2'	// mount volume
+			image 'maven:3.6.3'
 		}
 	}
 	stages{
 		stage('Build') {
 			steps {
-				echo "mvn --version"
+				sh "mvn --version"
 				echo "Build"
 			}
 		}
