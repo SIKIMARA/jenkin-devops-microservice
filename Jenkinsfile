@@ -49,7 +49,7 @@ pipeline  {
         stage("Build Docker Image"){
             steps{
                script{
-                   dockerImage = docker.build("in28min/${env.JOB_NAME}:${env.BUILD_NUMBER}")
+                   dockerImage = docker.build("bougarrani/${env.JOB_NAME}:${env.BUILD_NUMBER}")
                }
             }
         }
